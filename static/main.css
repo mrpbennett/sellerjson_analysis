@@ -1,0 +1,54 @@
+body {
+    color: black;
+}
+button {
+    cursor: pointer
+}
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.stat-box {
+    width:250px;
+}
+.count-box{
+    height: 250px;
+}
+.count-title {
+    font-size: 24px;
+    margin-bottom:20px;
+}
+.count, .stat-box-count {
+    font-size:64px;
+}
+.domain-stat-count {
+    font-size: 35px;
+}
+.form-input {
+    width: 525px;
+    font-size: 14px;
+}
+.contact-info {
+    font-size: 0.95rem !important; 
+}
+footer {
+    background-color: #212529;
+    color: #ffffff;
+}
+#info-block {
+    background-color: rgb(253, 91, 42);
+}
+#publisher-count {
+    background-color: rgb(147, 209, 172);
+}
+
+#intermediary-count {
+    background-color: rgb(255, 182, 18);
+}
+#both-count {
+    background-color: rgb(250, 156, 190);
+}
+#domain-stats {
+    background-color: rgb(137, 101, 221);
+}

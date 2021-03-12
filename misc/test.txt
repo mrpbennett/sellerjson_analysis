@@ -1,0 +1,4 @@
+https://www.adyoulike.com/sellers.json
+https://cdn.indexexchange.com/sellers.json
+https://cdn.pubmatic.com/sellers/data/sellers.json
+https://www.openx.com/sellers.json
