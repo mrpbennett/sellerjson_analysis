@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install & use pipenv
-COPY Pipfile Pipfile.lock ./
+COPY ./Pipfile ./Pipfile.lock ./
 RUN python -m pip install --upgrade pip
 RUN pip install pipenv && pipenv install --dev --system --deploy
 
@@ -24,4 +24,4 @@ RUN useradd appuser && chown -R appuser /app
 USER appuser
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
