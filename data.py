@@ -8,12 +8,12 @@ c = config.Config()
 def connect_to_presto():
     with prestodb.dbapi.connect(
         host=c.DBHOST,
-        port=8443,
-        user="pbennett",
+        port=int(c.DBPORT),
+        user=c.DBUSER,
         catalog="gridhive",
         schema="rpt",
         http_scheme="https",
-        auth=prestodb.auth.BasicAuthentication("pbennett", c.DBPWD),
+        auth=prestodb.auth.BasicAuthentication(c.DBUSER, c.DBPWD),
     ) as conn:
         cur = conn.cursor()
         cur.execute(

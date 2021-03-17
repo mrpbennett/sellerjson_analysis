@@ -11,7 +11,9 @@ class Config:
     FLASK_ENV = "development"
     SECRET_KEY = environ.get("SECRET_KEY")
     DBHOST = environ.get("DBHOST")
+    DBUSER = environ.get("DBUSER")
     DBPWD = environ.get("DBPWD")
+    DBPORT = environ.get("DBPORT")
 
 
 class ProdConfig(Config):
