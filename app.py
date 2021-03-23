@@ -7,10 +7,7 @@ from data import connect_to_presto, pp_sjson_comparison
 app = Flask(__name__)
 
 # Using a production configuration
-# app.config.from_object("config.ProdConfig")
-
-# Using a development configuration
-app.config.from_object("config.DevConfig")
+app.config.from_object("config.ProdConfig")
 
 
 @app.route("/", methods=["GET", "POST"])
