@@ -51,4 +51,3 @@ def pp_sjson_comparison(data):
     merged_df_rpt.to_csv(f"./files/sellerjson_output.csv")
 
     return f"We saw {matched_domains} matched domains, which generated ${revenue:,.0f} in revenue in the past 24hrs"
-q

@@ -88,8 +88,12 @@
 <div id="domain-stats" class="flex flex-column flex-grow px-10 count-box h-100">
     <div  class="flex items-center">
         <div>
-            <p class="domain-stat-count">{{ matched_enteries }}</p>
-            <p class="domain-stat-count"><strong>{{pub_pct}}%</strong> of the domains are listed as "<strong>PUBLISHER</strong>"</p>
+            {% if error != "" %}
+                <p class="domain-stat-count">{{ error }}</p>
+            {% else %}
+                <p class="domain-stat-count">{{ matched_enteries }}</p>
+                <p class="domain-stat-count"><strong>{{pub_pct}}%</strong> of the domains are listed as "<strong>PUBLISHER</strong>"</p>
+            {% endif %}
         </div>
     </div>
 </div>
