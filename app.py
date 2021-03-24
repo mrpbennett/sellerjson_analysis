@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, send_file, request
 from submit import SubmitURL
 import requests
+import json
 
 from data import connect_to_presto, pp_sjson_comparison
 
@@ -17,14 +18,20 @@ def get_data():
     sellers = {}
     data = {}
     matched = "populated once data is processed"
+    error = ""
 
     if form.validate():
         url = form.sellers_json_url.data
 
         r = requests.get(url)
         if r.status_code == 200:
-            data = r.json()
-            sellers = data.get("sellers")
+            try:
+                data = r.json()
+                sellers = data.get("sellers")
+            except json.decoder.JSONDecodeError as err:
+                error = f"Seller.json file could not be parsed. Due to {err}"
+            except KeyError as err:
+                error = f"Seller.json file could not be parsed. Due to {err}"
         else:
             print(f"ERROR: {r.status_code}, {r.reason}")
 
@@ -101,6 +108,7 @@ def get_data():
         form=form,
         matched_enteries=matched,
         pub_pct=pub_pct,
+        error=error,
     )
 
 
